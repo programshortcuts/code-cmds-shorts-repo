@@ -24,14 +24,14 @@
     <div class="page-wrapper">
         <aside class="side-bar ">
             <header>
-                <a tabindex="0" href="https://programshortcuts.com/" id="programShortcutsIMGLink"
+                <a data-nav-target="" tabindex="0" href="https://programshortcuts.com/" id="programShortcutsIMGLink"
                     rel="noopener noreferrer">
                     <img
                         src="imgs/codeCmdShorts-logo-2.png" alt="image link to programshorcuts page"></a>
                 <div class="page-links-container">
-                    <a target="_blank" id="programShortcutsLink" href="https://programshortcuts.com/"
+                    <a tabindex="0" data-nav-target="programshorcuts-link" target="_blank" id="programShortcutsLink" href="https://programshortcuts.com/"
                     rel="noopener noreferrer">program shortcuts</a>
-                    <a href="https://programshortcuts.github.io/tyler-tomani-2026/"
+                    <a data-nav-target="homepage-tyler-tomani-link" href="https://programshortcuts.github.io/tyler-tomani-2026/"
                         rel="noopener noreferrer"> homepage (tyler-tomani-2026)</a>
                 </div>
             </header>
@@ -41,7 +41,7 @@
             </div>
             
         </aside>
-        <div  id="mainContent" class="main-content">
+        <div tabindex="0" data-nav-target="main-content" id="mainContent" class="main-content">
             <header>
                  <img src="imgs/codeCmdShorts-logo-2.png" alt="">
                 <nav>
@@ -63,6 +63,7 @@
         </div>
         <i tabindex="0" id="sideBarBtn" class="bx bx-menu"></i>
         <button  id="darkModeBtn">dark mode</button>
+        <span id="popupLetterNav"></span>
     </div>  
 </body>
 </html>

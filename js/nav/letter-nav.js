@@ -6,34 +6,54 @@ export function letterNav({e}){
     // only react to single alphanumeric keys
     if (key.length !== 1 || !/^[a-z0-9]$/.test(key)) return;
 
-    // const allAs = [...document.querySelectorAll('[data-nav-target],.sub-resources-container a')].filter(el => {
+    // const allEls = [...document.querySelectorAll('[data-nav-target],.sub-resources-container a')].filter(el => {
     //     const rect = el.getBoundingClientRect();
     //     return el.offsetParent !== null && rect.width > 0 && rect.height > 0;
     // });
-    const allAs = [...document.querySelectorAll(
-    '.side-bar-topics a'
+    const allEls = [...document.querySelectorAll(
+    '[data-nav-target], .side-bar-topics a, .snip'
     )].filter(el => {
         const rect = el.getBoundingClientRect();
         return el.offsetParent !== null && rect.width > 0 && rect.height > 0;
     });
 
     // filter elements whose id starts with the key
-    const letteredAs = allAs.filter(el => el.id.toLowerCase().startsWith(key));
-    if (letteredAs.length === 0) return;
+    const firstAlpha = el => {
+        // If element is NOT an anchor, use its ID  
+        // If anchor has ID, go to ID[0]
+
+        if (el.id) {
+            return el.id[0].toLowerCase()
+        } else {
+            const s = (el.innerText || '').trim().toLowerCase()
+            for (let i = 0; i < s.length; i++) {
+                if (/[a-z]/.test(s[i])) {
+                    return s[i]
+                }
+            }
+            return ''
+        }
+        // Regular <a> text logic
+    }
+    const matching = allEls.filter(el => {
+        return firstAlpha(el) == key
+    })
+    // const matching = allEls.filter(el => el.id.toLowerCase().startsWith(key));
+    // if (matching.length === 0) return;
 
     const activeEl = document.activeElement;
-    const iActiveEl = allAs.indexOf(activeEl);
+    const iActiveEl = allEls.indexOf(activeEl);
 
     let target;
     if (e.shiftKey) {
         // console.log("here"); // debugging
         // go backwards: find the last match before the active element
-        target = [...letteredAs].reverse().find(a => allAs.indexOf(a) < iActiveEl)
-            || letteredAs[letteredAs.length - 1];
+        target = [...matching].reverse().find(a => allEls.indexOf(a) < iActiveEl)
+            || matching[matching.length - 1];
     } else {
         // go forwards: find the first match after the active element
-        target = letteredAs.find(a => allAs.indexOf(a) > iActiveEl)
-            || letteredAs[0];
+        target = matching.find(a => allEls.indexOf(a) > iActiveEl)
+            || matching[0];
     }
 
     target?.focus();
