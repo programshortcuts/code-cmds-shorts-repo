@@ -11,7 +11,7 @@ export function letterNav({e}){
     //     return el.offsetParent !== null && rect.width > 0 && rect.height > 0;
     // });
     const allAs = [...document.querySelectorAll(
-        '.side-bar-topics a'
+    '.side-bar-topics a'
     )].filter(el => {
         const rect = el.getBoundingClientRect();
         return el.offsetParent !== null && rect.width > 0 && rect.height > 0;

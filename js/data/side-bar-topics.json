@@ -108,11 +108,11 @@
         {
             "title": "Visual Studio Code",
             "id": "vsCodeAside",
-            "href": "topics/visualStudio-codeCmdShrt/visualStudio-codeCmdShrt.html",
+            "href": "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html",
             "items": [
                 {
                     "title": "sub Topic",
-                    "href": "topics/visualStudio-codeCmdShrt/sub-topics/sub-topic.html"
+                    "href": "topics/vsCode-codeCmdShrt/sub-topics/sub-topic.html"
                 }
             ]
         },
