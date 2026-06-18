@@ -6,7 +6,8 @@
 import { isSafePath } from "./security-utils.js"
 export const mainLandingPage = document.querySelector("#mainLandingPage");
 
-const DEFAULT_PAGE = "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
+const DEFAULT_PAGE =
+    "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
 
 const pageCache = new Map();
 
@@ -28,7 +29,7 @@ export function initInjectContentListeners() {
     });
 }
 
-export async function injectPage(href=DEFAULT_PAGE) {
+export async function injectPage(href) {
     if (!href) return;
        if (!isSafePath(href)) {
         console.warn("Blocked unsafe path:", href);
@@ -45,38 +46,37 @@ export async function injectPage(href=DEFAULT_PAGE) {
                 throw new Error(`Failed to fetch ${href}`);
             }
             html = await res.text();
-            console.log("Contains <script>:", html.includes("<script"));
-
             pageCache.set(href, html);
         }
 
         // Parse HTML safely
-        // 1. Sanitize RAW string first
-        const cleanHTML = DOMPurify.sanitize(html, {
-            ALLOWED_TAGS: [
-                'div', 'p', 'span', 'ul', 'ol', 'li',
-                'pre', 'code',
-                'img',
-                'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
-                'a', 'section', 'article', 'header', 'footer'
-            ],
-            ALLOWED_ATTR: [
-                'href', 'src', 'alt', 'class', 'id', 'tabindex'
-            ]
-        });
-
-        // 2. THEN parse the clean version
         const parser = new DOMParser();
-        const doc = parser.parseFromString(cleanHTML, "text/html");
+        const doc = parser.parseFromString(html, "text/html");
 
-        // 3. Extract content safely
+        // Grab the actual page content
         const newContent =
             doc.querySelector("#mainLandingPage") ||
             doc.querySelector(".main-landing-page") ||
             doc.body;
 
-        // 4. Inject
-        mainLandingPage.innerHTML = newContent.innerHTML;
+        if (!newContent) {
+            throw new Error("No valid page content found");
+        }
+        const cleanedHTML = DOMPurify.sanitze(newContent)
+        // ✅ Sanitize before injecting
+        mainLandingPage.innerHTML = DOMPurify.sanitize(cleanedHTML, {
+    ALLOWED_TAGS: [
+        'div','p','span','ul','ol','li',
+        'pre','code',
+        'img',
+        'h1','h2','h3','h4','h5','h6',
+        'a','section','article','header','footer'
+    ],
+    ALLOWED_ATTR: [
+        'href','src','alt','class','id','tabindex'
+    ]
+});
+
         // Optional: re-initialize page features
         // initCopyCodes();
         // initDropDowns();
@@ -86,6 +86,6 @@ export async function injectPage(href=DEFAULT_PAGE) {
 
     } catch (err) {
         mainLandingPage.innerHTML =
-            `<p class="r">Failed to load page: ${href}</p>`;
+            `<p style="color:red;">Failed to load page: ${href}</p>`;
     }
 }

@@ -6,17 +6,19 @@
     <title>code-cmds-shorts index.html</title>
     <link rel="stylesheet" href="css/main.css">
     <!-- <script src="https://unpkg.com/dompurify@3.0.6/dist/purify.min.js"></script> -->
-    <script src="js/lib/purify.min.js"></script>
+    <script src="js/lib/purify.min.js" defer></script>
     <script type="module" src="js/app.js" defer></script>
-    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none';"> -->
-     <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self' 'unsafe-inline';
-    style-src 'self';
-    img-src 'self' data:;
-    object-src 'none';
-    base-uri 'none';
-">
+<meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' ;
+        style-src  'self' https://cdn.jsdelivr.net;
+        font-src 'self' https://unpkg.com data:;
+        img-src 'self' data:;
+        frame-src https://www.youtube.com;
+        object-src 'none';
+        base-uri 'none';
+          form-action 'self';
+    ">
 </head>
 <body class="">
     <div class="page-wrapper">

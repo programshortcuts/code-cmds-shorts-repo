@@ -4,7 +4,7 @@ import { initInjectContentListeners, injectPage } from "./core/inject-content.js
 
 
 // import { initDarkMode } from "./dark-mode.js"
-// import { keyboardNav } from "./nav/keyboard-nav.js"
+import { keyboardNav } from "./nav/keyboard-nav.js"
 // import { initToggleSideBar } from "./ui/toggle-sidebar.js"
 // import { initCopyCodes } from "./copy-code.js"
 
@@ -17,7 +17,7 @@ async function initApp() {
     // Sidebar navigation
     injectPage()
     initInjectContentListeners()
-
+    setupGlobalListeners()
     // UI features
     // initToggleSideBar()
     // initDarkMode()
@@ -32,6 +32,6 @@ function setupGlobalListeners() {
     document.addEventListener("keydown", e => {
         const tag = e.target.tagName.toLowerCase()
         if(tag === 'input' || tag === 'textarea') return
-        // keyboardNav(e)
+        keyboardNav({e})
     })
 }

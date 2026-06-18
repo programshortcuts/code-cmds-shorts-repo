@@ -30,11 +30,11 @@
         {
             "title": "Javascript",
             "id": "javascriptAside",
-            "href": "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html",
+            "href": "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.partial.html",
             "items": [
                 {
                     "title": "Keyboard nav",
-                    "href": "topics/javascript-codeCmdShrt/keyboard-nav/keyboard-nav-JS.html",
+                    "href": "topics/javascript-codeCmdShrt/keyboard-nav/keyboard-nav-JS.partial.html",
                     "items": [
                         {
                             "title": "letter-nav",
