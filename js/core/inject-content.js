@@ -7,8 +7,8 @@ import { initSnipNav } from "../nav/snips-nav.js";
 import { isSafePath } from "./security-utils.js"
 export const mainLandingPage = document.querySelector("#mainLandingPage");
 
-const DEFAULT_PAGE = "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
-// const DEFAULT_PAGE = "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html";
+// const DEFAULT_PAGE = "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
+const DEFAULT_PAGE = "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html";
 
 const pageCache = new Map();
 

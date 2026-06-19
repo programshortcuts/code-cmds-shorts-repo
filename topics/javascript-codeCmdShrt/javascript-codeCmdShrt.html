@@ -5,16 +5,17 @@
         <!-- keyboard Navigation -->
         <div class="topic drop-parent ">
             <header>
-                <h3 ><a data-nav id="keyboardNavigation" href="#" class="drop-down topic-title">Keyboard Navigation
-                    <sup class="r">**double tap on topic-titles should make it so it take whole main-landing-page</sup>
-                </a>
+                <h3 ><a tabindex="0" data-nav-target="keyboard-navigation" id="keyboardNavigation" 
+                    href="#" class="drop-down topic-title">Keyboard Navigation
+                    <!-- <sup class="r">**double tap on topic-titles should make it so it take whole main-landing-page</sup> -->
+                    </a>
                 </h3>
             </header>
             <div class="topic-snips drop-snips show">
                 <!-- keyboard-nav-temp.js -->
                 <div tabindex="0" class="snip drop-parent">
                     <header>
-                        <h4><a data-nav  href="#" class="drop-down snip-title">keyboard-nav-temp.js <sub>BEST VERSION YET</sub></a></h4>
+                        <h4><a data-nav  href="#" class="drop-down snip-title">keyboard-nav-temp.js </a></h4>
                         <!-- <h4><a data-nav  href="#" class="drop-down ">keyboard-nav.js <sub>BEST VERSION YET</sub></a></h4> -->
                     </header>
                     <div class="code-cmd drop-snips  ">
@@ -24,13 +25,76 @@
                 <!-- letter-focus.js -->
                 <div tabindex="0" class="snip drop-parent">
                     <header>
-                        <h4><a data-nav href="#" class="drop-down snip-title">letter-focus.js <sup>find & add good one</sup></a></h4>  
+                        <h4><a data-nav href="#" class="drop-down snip-title">letter-nav-temp.js <sup>find best</sup></a></h4>  
                     </header>
                     
                     <div class="code-cmd drop-snips">
+                        <button tabindex="0" class="popup-btn">O</button>
                         <div class="code-container">
-                            <button class="popup-btn">O</button>
-                            
+                            <pre tabindex="0" class="copy-code">
+// letter-nav.js
+// BEST simple letter-focus Thus Far, (( put in boiler plate))
+export function letterNav({e}){
+    const key = e.key.toLowerCase();
+    // console.log('dkfhs')
+    // only react to single alphanumeric keys
+    if (key.length !== 1 || !/^[a-z0-9]$/.test(key)) return;
+
+    // const allEls = [...document.querySelectorAll('[data-nav-target],.sub-resources-container a')].filter(el => {
+    //     const rect = el.getBoundingClientRect();
+    //     return el.offsetParent !== null && rect.width > 0 && rect.height > 0;
+    // });
+    const allEls = [...document.querySelectorAll(
+    '[data-nav-target], .side-bar-topics a, .snip'
+    )].filter(el => {
+        const rect = el.getBoundingClientRect();
+        return el.offsetParent !== null && rect.width > 0 && rect.height > 0;
+    });
+    // filter elements whose id starts with the key
+    const firstAlpha = el => {
+        // If element is NOT an anchor, use its ID  
+        // If anchor has ID, go to ID[0]
+
+        if (el.id) {
+            return el.id[0].toLowerCase()
+        } else {
+            const s = (el.innerText || '').trim().toLowerCase()
+            for (let i = 0; i < s.length; i++) {
+                if (/[a-z]/.test(s[i])) {
+                    return s[i]
+                }
+            }
+            return ''
+        }
+        // Regular <a> text logic
+    }
+    const matching = allEls.filter(el => {
+        return firstAlpha(el) == key
+    })
+    // const matching = allEls.filter(el => el.id.toLowerCase().startsWith(key));
+    // if (matching.length === 0) return;
+
+    const activeEl = document.activeElement;
+    const iActiveEl = allEls.indexOf(activeEl);
+
+    let target;
+    if (e.shiftKey) {
+        // console.log("here"); // debugging
+        // go backwards: find the last match before the active element
+        target = [...matching].reverse().find(a => allEls.indexOf(a) < iActiveEl)
+            || matching[matching.length - 1];
+    } else {
+        // go forwards: find the first match after the active element
+        target = matching.find(a => allEls.indexOf(a) > iActiveEl)
+            || matching[0];
+    }
+
+    target?.focus();
+    window.lastLetterPressed = key;
+
+}
+
+                            </pre>
                         </div>
                     </div>
                 </div>
