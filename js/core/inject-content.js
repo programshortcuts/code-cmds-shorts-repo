@@ -1,13 +1,14 @@
 // inject-content.js
 // import DOMPurify from 'dompurify';
 // import { initDropDowns, toggleSidebarDropdown } from "../ui/drop-downs.js";
-// import { initCopyCodes } from "../copy-code.js";
+import { initCopyCodes } from "../ui/copy-code.js";
+import { initSnipNav } from "../nav/snips-nav.js";
 // import { initCollapseCode } from "../ui/collapse-code.js";
 import { isSafePath } from "./security-utils.js"
 export const mainLandingPage = document.querySelector("#mainLandingPage");
 
-// const DEFAULT_PAGE = "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
-const DEFAULT_PAGE = "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html";
+const DEFAULT_PAGE = "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
+// const DEFAULT_PAGE = "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html";
 
 const pageCache = new Map();
 
@@ -46,7 +47,7 @@ export async function injectPage(href=DEFAULT_PAGE) {
                 throw new Error(`Failed to fetch ${href}`);
             }
             html = await res.text();
-            console.log("Contains <script>:", html.includes("<script"));
+            // console.log("Contains <script>:", html.includes("<script"));
 
             pageCache.set(href, html);
         }
@@ -79,8 +80,10 @@ export async function injectPage(href=DEFAULT_PAGE) {
         // 4. Inject
         mainLandingPage.innerHTML = newContent.innerHTML;
         // Optional: re-initialize page features
-        // initCopyCodes();
-        // initDropDowns();
+        requestAnimationFrame(() =>{
+            initCopyCodes();
+            initSnipNav()
+        })
         // initCollapseCode();
 
         mainLandingPage.scrollTo(0, 0);

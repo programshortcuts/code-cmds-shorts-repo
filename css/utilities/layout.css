@@ -34,12 +34,3 @@ body{
 }
 /* I think i found crazy work around, to control x and y overflow, 
 innner choose x axis outer y */
-.snip .code-container {
-    overflow: visible;
-    overflow-y: scroll;
-}
-
-.snip .code-container .copy-code {
-    overflow: hidden;
-    overflow-x: scroll;
-}

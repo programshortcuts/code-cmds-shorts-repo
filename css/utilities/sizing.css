@@ -17,31 +17,14 @@
 .main-content {
     /* Without This width: below, main-content expands full width window when .page-wrapper.collapsed  */
     width: calc(100% - var(--sidebar-width));
-    .main-landing-page {
-        height: 100vh;
-    }
-    .topic header>.topic-title,
-    .snip header h4 {
-        text-wrap: none;
-        width: 100%;
-        display: inline-block;
-        /* border: 2px solid blue; */
-    }
+}
+.main-landing-page {
+    height: 100vh;
+}
+.topic header>.topic-title{
+    text-wrap: none;
+    width: 100%;
+    display: inline-block;
+    /* border: 2px solid blue; */
 }
 
-.code-container {
-    width: fit-content;
-    height: fit-content;
-    max-height: 90vh;
-}
-.code-container>.copy-code {
-    line-height: .92;
-}
-.snip header h4 {
-    width: 90% !important;
-}
-
-.popup-btn{
-    width: 30px;
-    padding: .5% 0;
-}

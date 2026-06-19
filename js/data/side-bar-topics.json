@@ -30,7 +30,7 @@
         {
             "title": "Javascript",
             "id": "javascriptAside",
-            "href": "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.partial.html",
+            "href": "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html",
             "items": [
                 {
                     "title": "Keyboard nav",

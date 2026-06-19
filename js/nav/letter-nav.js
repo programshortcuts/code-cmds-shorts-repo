@@ -16,7 +16,7 @@ export function letterNav({e}){
         const rect = el.getBoundingClientRect();
         return el.offsetParent !== null && rect.width > 0 && rect.height > 0;
     });
-
+    console.log('letter', allEls.length)
     // filter elements whose id starts with the key
     const firstAlpha = el => {
         // If element is NOT an anchor, use its ID  

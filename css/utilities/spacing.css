@@ -43,5 +43,5 @@
     display: inline-block;
 }
 .snip .code-container {
-    margin-left: 3% !important;
+    /* margin-left: 3% !important; */
 }

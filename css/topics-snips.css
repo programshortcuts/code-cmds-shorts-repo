@@ -1,4 +1,49 @@
 /* topics-snips.css */
 .topic-snips{
     display: flex;
+    
+}
+.topic-snips > .snip 
+.topic-snips > .snip > .code-container{
+    width: 100%;
+}
+
+.snip .code-container {
+    overflow: visible;
+    overflow-y: scroll;
+}
+.snip .code-container .copy-code {
+    /* overflow: hidden; */
+    /* overflow-x: scroll; */
+}
+.snip header h4 {
+    text-wrap: none;
+    width: 100%;
+    display: inline-block;
+    /* border: 2px solid blue; */
+}
+.code-container {
+    width: fit-content;
+    min-width: 60%;
+    /* height: fit-content; */
+    /* max-height: 90vh; */
+    min-height: 5vh;
+}
+
+.code-container>.copy-code {
+    display: block;
+    line-height: .92;
+    padding-left: 5%;
+    height: 100% !important;
+    width: 100%;
+    font-size: .8rem;
+}
+
+.snip header h4 {
+    width: 90% !important;
+}
+
+.popup-btn {
+    /* width: 30px; */
+    padding: .5% 0;
 }

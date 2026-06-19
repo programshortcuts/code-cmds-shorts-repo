@@ -1,12 +1,12 @@
 // keyboard-nav.js
 import { letterNav } from "./letter-nav.js"
+import { initSnipNav } from "./snips-nav.js"
 const navState = {
     zone : null,
     isEnabled : true
 }
 export function keyboardNav({e}){
     navState.zone = routeKey({e})
-    console.log(navState)
     if (e.key === 'x' && e.shiftKey && e.metaKey) {
         navState.isEnabled = !navState.isEnabled
         popupLetterNav.innerText = `letter navigation : ${navState.isEnabled}`
@@ -20,8 +20,14 @@ export function keyboardNav({e}){
     }
     if(navState.isEnabled){
         letterNav({e})
-       
     }
+    if (navState.zone == 'main-content') {
+
+        
+    }
+
+
+    
     
 }
 function routeKey({e}){
