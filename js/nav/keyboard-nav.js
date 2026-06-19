@@ -2,7 +2,7 @@
 import { letterNav } from "./letter-nav.js"
 const navState = {
     zone : null,
-    isEnabled : false
+    isEnabled : true
 }
 export function keyboardNav({e}){
     navState.zone = routeKey({e})
