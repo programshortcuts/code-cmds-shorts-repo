@@ -73,11 +73,11 @@
         {
             "title": "Mac Essentials",
             "id": "macEssentialsSideBar",
-            "href": "topics/mac-essential-codeCmdShort/mac-essential-codeCmdShort.html",
+            "href": "topics/mac-essential-codeCmdShrt/mac-essential-codeCmdShrt.html",
             "items": [
                 {
                     "title": "Terminal MacOS",
-                    "href": "topics/terminal-mac-codeCmdShort/terminal-mac-codeCmdShort.html",
+                    "href": "topics/terminal-mac-codeCmdShrt/terminal-mac-codeCmdShrt.html",
                     "items": [
                         {
                             "title": "1.",
