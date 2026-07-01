@@ -1,0 +1,36 @@
+/* layout.css */
+body{
+    overflow: hidden;
+    overflow-x: hidden;
+}
+.side-bar{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* flex-direction: column-reverse; */
+}
+.side-bar > header {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    display: flex;
+    overflow: hidden;
+}
+.main-content{
+    overflow-y: scroll;
+}
+.main-content header{
+    display: flex;
+}
+
+.side-bar-topics .drop-down,
+.topic .drop-down{
+    display: inline-block;
+    /* white-space: none; */
+    text-wrap: none;
+}
+/* I think i found crazy work around, to control x and y overflow, 
+innner choose x axis outer y */
