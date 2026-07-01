@@ -1,9 +1,0 @@
-video {
-    width: 100%;
-    height: 100%;
-    min-height: 200px;
-    min-width: 200px;
-}
-#mainTopicsContainer li {
-    display: inline-block;
-}

@@ -4,6 +4,13 @@
     flex-direction: column;
     border: 1px solid black
 }
+.snip video {
+    border: 1px solid blue;
+    min-width:  200px;
+    min-height: 200px;
+    max-width:  200px;
+    max-height: 200px;
+}
 .snip > .snip-content{
 
 }

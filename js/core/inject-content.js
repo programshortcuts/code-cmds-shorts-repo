@@ -57,6 +57,7 @@ export async function injectPage(href=DEFAULT_PAGE) {
         // 1. Sanitize RAW string first
         const cleanHTML = DOMPurify.sanitize(html, {
             ALLOWED_TAGS: [
+                'video',
                 'div', 'p', 'span', 'ul', 'ol', 'li',
                 'pre', 'code',
                 'img',
@@ -64,6 +65,7 @@ export async function injectPage(href=DEFAULT_PAGE) {
                 'a', 'section', 'article', 'header', 'footer'
             ],
             ALLOWED_ATTR: [
+                'controls',
                 'href', 'src', 'alt', 'class', 'id', 'tabindex'
             ]
         });
