@@ -5,11 +5,9 @@
     --clr-txt-sidebar: black
 }
 body{
-    /* background-color: rgba(79, 91, 90, 0.327); */
     background-color: rgba(45, 47, 46, 0.422);
 }
 body.letter-focus-nav{
-
     background: rgb(93, 104, 125);
 }
 .code-container{
