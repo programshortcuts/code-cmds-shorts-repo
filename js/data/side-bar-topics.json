@@ -106,6 +106,17 @@
             ]
         },
         {
+            "title": "Prompts LLMS",
+            "id": "promptsLLMsAside",
+            "href": "topics/prompts-llms-codeCmdShrt/prompts-llms-codeCmdShrt.html",
+            "items": [
+                {
+                    "title": "sub Topic",
+                    "href": "topics/vsCode-codeCmdShrt/sub-topics/sub-topic.html"
+                }
+            ]
+        },
+        {
             "title": "Visual Studio Code",
             "id": "vsCodeAside",
             "href": "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html",
