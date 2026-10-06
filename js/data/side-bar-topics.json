@@ -4,16 +4,16 @@
         {
             "title": "github",
             "id": "githubAside",
-            "href": "topics/github-codeCmdShrt/github-codeCmdShrt.html"
+            "href": "pages/github-codeCmdShrt/github-codeCmdShrt.html"
         },
         {
             "title": "Debugging",
             "id": "debuggingAside",
-            "href": "topics/debuging-codeCmdShrt/debuging-codeCmdShrt.html",
+            "href": "pages/debuging-codeCmdShrt/debuging-codeCmdShrt.html",
             "items": [
                 {
                     "title": "javascript (working on it)",
-                    "href": "topics/debuging-codeCmdShrt/debuging-codeCmdShrt.html",
+                    "href": "pages/debuging-codeCmdShrt/debuging-codeCmdShrt.html",
                     "items": [
                         {
                             "title": "tbd",
@@ -30,11 +30,11 @@
         {
             "title": "Javascript",
             "id": "javascriptAside",
-            "href": "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html",
+            "href": "pages/javascript-codeCmdShrt/javascript-codeCmdShrt.html",
             "items": [
                 {
                     "title": "Keyboard nav",
-                    "href": "topics/javascript-codeCmdShrt/keyboard-nav/keyboard-nav-JS.partial.html",
+                    "href": "pages/javascript-codeCmdShrt/keyboard-nav/keyboard-nav-JS.partial.html",
                     "items": [
                         {
                             "title": "letter-nav",
@@ -51,33 +51,33 @@
         {
             "title": "HTML Style",
             "id": "htmlAside",
-            "href": "topics/html-codeCmdShrt/html-codeCmdShrt.html",
+            "href": "pages/html-codeCmdShrt/html-codeCmdShrt.html",
             "items": [
                 {
                     "title": "sub Topic",
-                    "href": "topics/html-codeCmdShrt/sub-topics/sub-topic.html"
+                    "href": "pages/html-codeCmdShrt/sub-topics/sub-topic.html"
                 }
             ]
         },
         {
             "title": "Browser Dev Tools",
             "id": "browserDevTools",
-            "href": "topics/browserDevTools-codeCmdShrt/browserDevTools-codeCmdShrt.html",
+            "href": "pages/browserDevTools-codeCmdShrt/browserDevTools-codeCmdShrt.html",
             "items": [
                 {
                     "title": "chrome dev tools",
-                    "href": "topics/browserDevTools-codeCmdShrt/chrome-codeCmdShrt/chrome-codeCmdShrt.html"
+                    "href": "pages/browserDevTools-codeCmdShrt/chrome-codeCmdShrt/chrome-codeCmdShrt.html"
                 }
             ]
         },
         {
             "title": "Mac Essentials",
             "id": "macEssentialsSideBar",
-            "href": "topics/mac-essential-codeCmdShrt/mac-essential-codeCmdShrt.html",
+            "href": "pages/mac-essential-codeCmdShrt/mac-essential-codeCmdShrt.html",
             "items": [
                 {
                     "title": "Terminal MacOS",
-                    "href": "topics/terminal-mac-codeCmdShrt/terminal-mac-codeCmdShrt.html",
+                    "href": "pages/terminal-mac-codeCmdShrt/terminal-mac-codeCmdShrt.html",
                     "items": [
                         {
                             "title": "1.",
@@ -91,7 +91,7 @@
                 },
                 {
                     "title": "restore / install OS",
-                    "href": "topics/javascript-codeCmdShrt/pageScripts/keyboard-nav-letter-nums.js",
+                    "href": "pages/javascript-codeCmdShrt/pageScripts/keyboard-nav-letter-nums.js",
                     "items": [
                         {
                             "title": "1.",
@@ -108,29 +108,30 @@
         {
             "title": "Prompts LLMS",
             "id": "promptsLLMsAside",
-            "href": "topics/prompts-llms-codeCmdShrt/prompts-llms-codeCmdShrt.html",
+            "href": "pages/prompts-llms-codeCmdShrt/prompts-llms-codeCmdShrt.html",
             "items": [
                 {
                     "title": "sub Topic",
-                    "href": "topics/vsCode-codeCmdShrt/sub-topics/sub-topic.html"
+                    "href": "pages/vsCode-codeCmdShrt/sub-topics/sub-topic.html"
                 }
             ]
         },
         {
             "title": "Visual Studio Code",
             "id": "vsCodeAside",
-            "href": "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html",
+            "href": "pages/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html",
             "items": [
                 {
                     "title": "sub Topic",
-                    "href": "topics/vsCode-codeCmdShrt/sub-topics/sub-topic.html"
+                    "href": "pages/vsCode-codeCmdShrt/sub-topics/sub-topic.html"
                 }
-            ]
+            ] 
         },
         {
             "title": "home",
             "id": "homeAside",
-            "href": "home.html"
+            "href": "pages/home.html"
+            
         }
     ]
 }

@@ -7,11 +7,12 @@ import { initSnipNav } from "../nav/snips-nav.js";
 import { isSafePath } from "./security-utils.js"
 export const mainLandingPage = document.querySelector("#mainLandingPage");
 
-// const DEFAULT_PAGE = "topics/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
-// const DEFAULT_PAGE = "topics/mac-essential-codeCmdShrt/mac-essential-codeCmdShrt.html";
-// const DEFAULT_PAGE = "topics/github-codeCmdShrt/github-codeCmdShrt.html";
-const DEFAULT_PAGE = "topics/prompts-llms-codeCmdShrt/prompts-llms-codeCmdShrt.html";
-// const DEFAULT_PAGE = "topics/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html";
+// const DEFAULT_PAGE = "pages/javascript-codeCmdShrt/javascript-codeCmdShrt.html";
+// const DEFAULT_PAGE = "pages/mac-essential-codeCmdShrt/mac-essential-codeCmdShrt.html";
+// const DEFAULT_PAGE = "pages/github-codeCmdShrt/github-codeCmdShrt.html";
+// const DEFAULT_PAGE = "pages/prompts-llms-codeCmdShrt/prompts-llms-codeCmdShrt.html";
+const DEFAULT_PAGE = "pages/home.html";
+// const DEFAULT_PAGE = "pages/vsCode-codeCmdShrt/vsCode-codeCmdShrt.html";
 
 const pageCache = new Map();
 

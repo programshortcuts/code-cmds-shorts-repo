@@ -2,7 +2,7 @@
 
 export function isSafePath(href) {
     return typeof href === "string" &&
-        href.startsWith("topics/") &&
+        href.startsWith("pages/") &&
         !href.includes("..") &&
         !href.startsWith("javascript:");
 }
